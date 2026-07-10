@@ -26,6 +26,24 @@ Dashboard ini dilengkapi dengan berbagai fitur otomatisasi untuk memudahkan penc
 
 ---
 
+## 📸 Cuplikan Tampilan
+
+Berikut adalah beberapa tampilan utama dari *spreadsheet* Dashboard Keuangan Pribadi:
+
+### 1. Sheet Dashboard
+Halaman ringkasan finansial visual yang menyajikan grafik tren pengeluaran mingguan, proporsi saldo uang digital/tunai, serta pintasan navigasi.
+![Sheet Dashboard](assets/Sheet%20Dashboard.png)
+
+### 2. Sheet Transaksi (Detail Transaksi / Pengeluaran)
+Lembar pencatatan transaksi harian yang dilengkapi dengan menu pilihan (*dropdown*) kategori dinamis serta *progress bar* alokasi anggaran.
+![Sheet Transaksi](assets/Sheet%20Transaksi.png)
+
+### 3. Sheet Laporan (Akhir Bulan & Heatmap)
+Halaman analisis akhir bulan yang menampilkan performa arus kas bulanan serta *Calendar Heatmap* visual intensitas pengeluaran harian.
+![Sheet Laporan](assets/Sheet%20Laporan.png)
+
+---
+
 ## 📂 Struktur Repositori & Versi Template
 
 Repositori ini melacak evolusi template dari versi paling sederhana hingga versi penuh fitur:
