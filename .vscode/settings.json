@@ -1,0 +1,88 @@
+{
+    // --- UTAMA ---
+    "window.zoomLevel": 0,
+    "editor.fontSize": 14,
+    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "editor.wordWrap": "on",
+    "editor.minimap.enabled": true,
+    "files.autoSave": "afterDelay",
+    
+    // --- TEMA DASAR ---
+    "workbench.colorTheme": "Abyss",
+    "workbench.iconTheme": "vscode-icons",
+
+    // --- CUSTOM CYBERPUNK COLORS ---
+    "workbench.colorCustomizations": {
+        // Warna teks utama (Cyan Neon)
+        "editor.foreground": "#81F7F3",
+        
+        // Background editor (Sedikit lebih gelap dari Abyss bawaan biar kontras)
+        "editor.background": "#000c18",
+        
+        // Nomor baris aktif (Kuning Neon)
+        "editorLineNumber.activeForeground": "#F6F606",
+        
+        // [PERBAIKAN] Warna seleksi (Blok teks)
+        // Sebelumnya biru terang bikin teks cyan susah dibaca. 
+        // Ganti ke Ungu Gelap Transparan biar teks tetap "pop".
+        "editor.selectionBackground": "#5a189a80", 
+        
+        // [TAMBAHAN] Kursor (Hot Pink biar kontras dengan teks Cyan)
+        "editorCursor.foreground": "#ff00ff",
+        
+        // [TAMBAHAN] Terminal (Biar konsisten sama editor)
+        "terminal.foreground": "#81F7F3",
+        "terminal.background": "#000c18"
+    },
+
+    // --- WARNA KODE (SYNTAX) ---
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                // Komentar: Kuning (Sesuai requestmu)
+                "scope": "comment",
+                "settings": {
+                    "foreground": "#F6F606",
+                    "fontStyle": "italic" // Miring biar beda sama kode
+                }
+            },
+            {
+                // String: Hijau Matrix
+                "scope": "string",
+                "settings": {
+                    "foreground": "#19d800"
+                }
+            },
+            {
+                // Keyword (if, else, return): Magenta/Ungu Neon
+                "scope": "keyword",
+                "settings": {
+                    "foreground": "#ff00ff",
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                // Fungsi (main, cout): Biru Muda
+                "scope": "entity.name.function",
+                "settings": {
+                    "foreground": "#00bfff"
+                }
+            }
+        ]
+    },
+
+    // --- GAYA RETRO/CYBERPUNK ---
+    // Kursor kedap-kedip halus & animasi mengetik
+    "editor.cursorBlinking": "expand", 
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorStyle": "line",
+
+    // --- SETTING C++ ---
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "iostream": "cpp",
+        "cmath": "cpp",
+        "vector": "cpp",
+        "string": "cpp"
+    }
+}

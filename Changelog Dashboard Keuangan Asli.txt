@@ -1,0 +1,247 @@
+# Riwayat Perubahan (Changelog) - Dashboard Keuangan Mahasiswa
+
+Semua perubahan penting pada proyek dashboard keuangan pribadi ini didokumentasikan di berkas ini. Format penulisan berkas ini merujuk pada pedoman standardisasi [Keep a Changelog](https://keepachangelog.com/id/1.1.0/) dan mematuhi aturan [Semantic Versioning](https://semver.org/lang/id/).
+
+---
+
+> [!IMPORTANT]
+> **Status Proyek: DIHENTIKAN (Deprecated)**
+> Pengembangan proyek ini telah dihentikan secara resmi karena sistem dinilai sudah stabil. Selain itu, terdapat kendala teknis berupa kompleksitas pengembangan yang lebih tinggi jika dibandingkan dengan membangun program khusus yang memiliki fungsi serupa.
+
+---
+
+## [4.0.0] - 2025-11-09
+*Fokus Rilis: Analisis & Perencanaan (Versi 4)*
+
+### Ditambahkan
+- Menambahkan lembar kerja (**sheet**) baru bernama **Akhir Bulan**.
+- Menambahkan peta panas (*heatmap*) berbentuk kalender, di mana setiap tanggal diberi indikator warna (gradasi dari hijau hingga merah) berdasarkan intensitas nominal pengeluaran pada hari tersebut.
+- Meningkatkan kapasitas baris input pada lembar kerja **Pengeluaran** dari 60 menjadi 81 baris.
+- Menambahkan kalkulasi akumulasi perubahan tabungan (penambahan atau pengurangan) pada lembar kerja **Akhir Bulan**.
+- Menambahkan kalkulasi perubahan arus kas (arus kas positif maupun negatif) pada lembar kerja **Akhir Bulan**.
+- Menambahkan fitur kalkulasi total dana yang digunakan per elemen detail berdasarkan kategorinya masing-masing.
+- Menambahkan lembar kerja baru bernama **Kalkulasi** untuk menampung seluruh formula perhitungan secara terpusat.
+- Menambahkan perhitungan total kuantitas dan total nominal harga untuk setiap rincian detail berdasarkan nilai kategorinya.
+
+### Diubah
+- Mengubah jumlah baris input pada lembar kerja **Pengeluaran** dari 60 menjadi 80 baris.
+- Memindahkan seluruh formula perhitungan dari lembar kerja operasional ke lembar kerja khusus **Kalkulasi**.
+
+### Diperbaiki
+- Memperbaiki visualisasi dan akurasi data pada grafik pengeluaran mingguan.
+- Memperbaiki formula indikator kemajuan (*progress bar*) untuk kategori Makanan dan Jajan pada lembar kerja **Detail Transaksi**.
+- Memperbaiki formula kalkulasi total nominal harga untuk kategori **Makanan Pokok dan Jajan** serta **Kebutuhan Lain** pada lembar kerja **Kalkulasi**.
+
+---
+
+## [3.1.1] - 2025-10-07
+*Fokus Rilis: UI/UX (Versi 3 - Perbaikan)*
+
+### Diperbaiki
+- Memperbaiki formula saldo awal uang tunai agar aktivitas penarikan tunai (*tarik tunai*) secara otomatis mengurangi saldo tunai.
+- Memperbaiki formula perhitungan total pada lembar kerja **Pendapatan** yang sebelumnya keliru menjumlahkan seluruh nilai transaksi, termasuk aktivitas tarik tunai dan deposit.
+
+---
+
+## [3.1.0] - 2025-10-04
+*Fokus Rilis: UI/UX (Versi 3 - Pembaruan)*
+
+### Ditambahkan
+- Menambahkan kategori pengeluaran **Jajan** beserta rincian detailnya.
+- Menambahkan alokasi anggaran (*budgeting*) dan indikator kemajuan (*progress bar*) khusus untuk pengeluaran kategori Jajan.
+- Menambahkan fungsi otomatis untuk menghitung sisa hari dalam sebulan berdasarkan input tanggal dari pengguna.
+- Menambahkan deskripsi penjelas pada seluruh data grafik yang disajikan.
+- Menambahkan legenda atau deskripsi indikasi warna yang digunakan pada nilai kolom **Kategori** dan **Detail**.
+- Menambahkan informasi **Sisa Bulan Lalu** pada lembar kerja **Detail Pengeluaran**.
+- Menambahkan kelompok anggaran **Jajan** beserta komponen-komponen pendukungnya.
+- Menambahkan sel informasi untuk menampilkan pengeluaran harian, baik secara digital maupun tunai.
+- Menambahkan sel informasi yang menampilkan rekomendasi batas pengeluaran harian dan total pengeluaran riil hari ini.
+- Menambahkan format kondisi warna (*conditional formatting*) untuk memberikan peringatan visual kepada pengguna apabila pengeluaran hari ini melebihi batas rekomendasi harian.
+
+### Diubah
+- Memperbarui cakupan grafik pai nominal dan persentase penggunaan uang digital serta tunai agar turut menghitung pengeluaran kategori Jajan.
+- Memperbarui tata letak (*layout*) pada lembar kerja **Detail Transaksi**.
+- Memperbarui tata letak (*layout*) pada lembar kerja **Pendukung**.
+- Menyesuaikan warna pada kolom **Kategori** dan **Detail** agar lebih representatif dalam menggambarkan nilai data.
+- Menyesuaikan skema warna pada seluruh grafik untuk meningkatkan estetika visual.
+
+### Dihapus
+- Menghapus penyajian grafik pengeluaran bulan lalu pada lembar kerja **Dashboard**.
+- Menghapus fitur perhitungan batas anggaran (*budget*) maksimal harian.
+
+### Catatan
+- Teridentifikasi satu kali anomali pada formula perhitungan pengeluaran di minggu ke-5, di mana terjadi kesalahan (*error*) pada lingkungan produksi (*production*), tetapi berjalan normal pada lingkungan pengembangan (*development*). Kasus ini terjadi pada September 2025 (Semester 5).
+- Melakukan pemisahan repositori/lingkungan kerja antara tahap pengembangan (*development*) dan tahap penggunaan aktif (*production*).
+
+---
+
+## [3.0.0] - 2025-08-15
+*Fokus Rilis: UI/UX (Versi 3 - Rilis Utama)*
+
+### Ditambahkan
+- Menambahkan menu pilihan (*dropdown*) berwarna untuk kolom **Kategori** dan **Detail** pada lembar kerja **Pendapatan**.
+- Menambahkan menu pilihan (*dropdown*) berwarna untuk kolom **Detail** pada lembar kerja **Pengeluaran**.
+- Menambahkan menu pilihan (*dropdown*) berwarna untuk metode **Pembayaran** pada lembar kerja **Pengeluaran** dan **Pendapatan**.
+
+### Diubah
+- Memperbarui menu pilihan (*dropdown*) berwarna untuk kolom **Kategori** pada lembar kerja **Pengeluaran**.
+- Memperbarui tata letak (*layout*) pada lembar kerja **Dashboard**, **Detail Transaksi**, **Pengeluaran**, dan **Pendapatan**.
+
+### Diperbaiki
+- Memperbaiki formula kalkulasi *Budget Awal* untuk uang digital dan tunai pada lembar kerja **Detail Transaksi**.
+- Memperbaiki validasi data kolom *Pembayaran* pada lembar kerja **Pendapatan** guna menyelaraskannya dengan formula *Budget Awal* uang digital dan tunai.
+
+---
+
+## [2.5.0] - 2025-08-05
+*Fokus Rilis: Fitur (Versi 2 - Pembaruan)*
+
+### Ditambahkan
+- Melengkapi lembar kerja **Dashboard** dengan kalimat sambutan, tombol pintasan (*hyperlink*), deskripsi fungsi setiap lembar kerja, dan visualisasi grafik bulan lalu.
+- Menambahkan menu pilihan (*dropdown*) pada kolom **Kategori** dan **Detail** beserta relasi dinamis antar keduanya pada lembar kerja **Pendapatan**.
+- Menambahkan tiga grafik pai baru untuk menyajikan nominal pengeluaran uang digital, uang tunai, serta persentase pengeluaran mingguan.
+
+### Diubah
+- Mengubah penamaan lembar kerja dari **Pemasukan** menjadi **Pendapatan**.
+- Mengubah penamaan kelompok **General** menjadi **Pengeluaran per Minggu**.
+- Mengubah nama grafik pada lembar kerja **Detail Transaksi** menjadi **Persentase Penggunaan Uang Digital/Tunai**.
+- Mengorganisasi isi lembar kerja pendukung berdasarkan jenis menu pilihan (*dropdown*) untuk pengeluaran dan pendapatan.
+- Mengubah nama berkas buku kerja (*workbook*) dari *Template Keuangan* menjadi *Dashboard Keuangan*.
+
+---
+
+## [2.4.0] - 2025-07-31
+*Fokus Rilis: Fitur (Versi 2 - Pembaruan)*
+
+### Ditambahkan
+- Menambahkan lembar kerja **Dashboard** yang berfungsi sebagai halaman utama/sambutan pengguna.
+- Menambahkan lembar kerja **Pemasukan** lengkap dengan struktur kolom dan formula perhitungan.
+- Menambahkan kolom **Pembayaran** untuk membedakan metode transaksi.
+
+### Diubah
+- Menggabungkan data dari lembar kerja **Digital** dan **Tunai** ke dalam satu lembar kerja terpadu bernama **Pengeluaran**.
+- Menyesuaikan alokasi anggaran (*budget*) dan indikator kemajuan (*progress bar*) untuk transaksi digital & tunai agar selaras dengan struktur lembar kerja yang baru.
+- Menyesuaikan formula perhitungan pengeluaran mingguan.
+- Menambahkan awalan (prefiks) **Pengeluaran** pada penamaan seluruh grafik pai.
+- Menyesuaikan formula grafik pai agar merujuk pada struktur lembar kerja yang baru.
+
+### Diperbaiki
+- Memperbaiki formula pada indikator kemajuan (*progress bar*) anggaran agar selaras dengan struktur baru.
+
+### Dihapus
+- Menghapus lembar kerja **Digital** dan **Tunai** (karena telah digabungkan ke lembar kerja **Pengeluaran**).
+
+---
+
+## [2.3.0] - 2025-06-04
+*Fokus Rilis: Fitur (Versi 2 - Pembaruan)*
+
+### Ditambahkan
+- Menambahkan alokasi anggaran untuk kategori makanan pokok dan kebutuhan lainnya berdasarkan metode pembayaran.
+- Menambahkan indikator kemajuan (*progress bar*) untuk kategori Makanan Pokok dan Kebutuhan Lain, baik untuk metode pembayaran digital maupun tunai.
+- Menambahkan komponen judul visual: **Progress Bar Budget** dan **Alokasi Budget**.
+
+### Diubah
+- Memisahkan pencatatan transaksi Uang Digital dan Uang Tunai ke dalam lembar kerja berbeda, yaitu `digital` dan `tunai`.
+- Memecah struktur lembar kerja utama dan memindahkan rincian transaksi ke lembar kerja **Detail**.
+
+### Dihapus
+- Menghapus lembar kerja utama karena seluruh data telah didistribusikan ke lembar kerja modular yang baru.
+
+---
+
+## [2.2.0] - 2025-05-21
+*Fokus Rilis: Fitur (Versi 2 - Pembaruan)*
+
+### Ditambahkan
+- Menambahkan kolom **Kategori** beserta menu pilihan (*dropdown*) untuk opsi Makanan Pokok dan Kebutuhan Lain.
+- Mengimplementasikan dependensi dinamis pada menu pilihan **Detail** berdasarkan pilihan **Kategori**.
+- Menambahkan komponen judul visual: **Panel Kontrol**.
+- Menambahkan kolom input rentang waktu **Tanggal Awal** dan **Tanggal Akhir**.
+- Menambahkan formula otomatis untuk menghitung pengeluaran mingguan.
+- Menambahkan lembar kerja pendukung untuk menyimpan tabel relasi menu pilihan **Kategori** dan **Detail**.
+
+### Diubah
+- Menyesuaikan kembali elemen pilihan pada menu *dropdown*.
+
+### Diperbaiki
+- Memperbaiki kesalahan formula kalkulasi pengeluaran mingguan yang tidak akurat pada versi sebelumnya.
+
+---
+
+## [2.1.1] - 2025-05-20
+*Fokus Rilis: Fitur (Versi 2 - Perbaikan)*
+
+### Diperbaiki
+- Memperbaiki formula perhitungan batas anggaran harian (*budget* maksimal per hari) untuk jenis uang digital dan tunai yang sebelumnya tidak berfungsi.
+- Memperbaiki formula kalkulasi pengeluaran mingguan untuk menyesuaikan dengan struktur data yang baru.
+
+---
+
+## [2.1.0] - 2025-05-19
+*Fokus Rilis: Fitur (Versi 2 - Pembaruan)*
+
+### Ditambahkan
+- Menambahkan subjudul pengelompokan baru: **Uang Digital**, **Uang Tunai**, dan **General**.
+
+### Diubah
+- Mengubah struktur pengelompokan dari Uang Tunai menjadi **Makanan Pokok** dan **Kebutuhan Lain**.
+- Menyesuaikan isi menu pilihan *dropdown* untuk kelompok **Makanan Pokok**.
+- Menyesuaikan visualisasi grafik pai agar selaras dengan perubahan kelompok baru.
+- Memisahkan kolom pencatatan anggaran awal dan akhir berdasarkan jenis uang.
+- Memperbesar dimensi ukuran tampilan grafik.
+
+---
+
+## [2.0.0] - 2025-05-14
+*Fokus Rilis: Fitur (Versi 2 - Rilis Utama)*
+
+### Ditambahkan
+- Menambahkan sel kalkulasi otomatis **Sisa Hari hingga Akhir Bulan** menggunakan formula.
+- Menambahkan format kondisi warna (*conditional formatting*) sebagai indikator visual untuk **Sisa Hari**.
+- Menambahkan diagram pai untuk menyajikan proporsi pengeluaran **Uang Digital** dan **Uang Tunai**.
+- Menambahkan diagram garis untuk menyajikan tren **Pengeluaran per Minggu**.
+- Menambahkan komponen judul visual: **Detail Transaksi**.
+
+### Diubah
+- Mengubah tata letak (*layout*) antar kelompok data menjadi format horizontal.
+- Menyusun tata letak fitur-fitur tambahan secara vertikal.
+- Menambahkan menu pilihan (*dropdown*) dengan visualisasi warna pada kolom **Detail**.
+- Meningkatkan kapasitas baris input untuk setiap kelompok data menjadi 60 baris.
+- Memperbarui formula kalkulasi batas anggaran harian (*budget* maksimal per hari).
+- Mengotomatisasi kalkulasi pengeluaran mingguan yang sebelumnya diisi secara manual.
+
+### Dihapus
+- Menghapus sel input **Tanggal Akhir Bulan** dan menggantinya dengan sel dinamis **Sisa Hari hingga Akhir Bulan**.
+
+---
+
+## [1.2.0] - 2025-04-07
+*Fokus Rilis: Permulaan (Versi 1 - Pembaruan)*
+
+### Ditambahkan
+- Menambahkan batas anggaran harian (*budget* maksimal per hari) untuk jenis Uang Digital.
+- Menambahkan sel input **Tanggal Akhir Bulan** untuk keperluan kalkulasi anggaran harian.
+
+---
+
+## [1.1.0] - 2025-02-28
+*Fokus Rilis: Permulaan (Versi 1 - Pembaruan)*
+
+### Ditambahkan
+- Menambahkan kolom pencatatan pengeluaran mingguan (Minggu 1 hingga Minggu 4).
+
+### Diubah
+- Mengubah susunan dan nama kolom menjadi: **No**, **Detail**, **Tanggal**, **Harga**, dan **Total**.
+
+---
+
+## [1.0.0] - 2025-02-16
+*Fokus Rilis: Permulaan (Versi 1 - Rilis Awal)*
+
+### Ditambahkan
+- Menetapkan judul utama lembar kerja sebagai **Template Keuangan**.
+- Mendesain tiga kelompok kategori utama transaksi: **Makanan**, **Lainnya (Uang Digital)**, dan **Lainnya (Uang Tunai)**.
+- Menyediakan kapasitas 30 baris dan 5 kolom input untuk masing-masing kelompok kategori.
+- Menambahkan pencatatan anggaran awal dan akhir untuk masing-masing jenis uang.
+- Mengatur tata letak tabel secara horizontal dengan pengisian data secara manual, kecuali untuk formula kalkulasi saldo akhir anggaran.
